@@ -23,10 +23,15 @@ Example 2:
 
 public class Reverse_Digits_Of_a_Number {
 
-    static int ReverseDigit(int n){
+    // Method to find the Reverse of a Number
+   public static int ReverseDigit(int n){
+        // Variable to Store Reverse of a number
         int rev=0;
+
+        // While loop to Ignore Trailng 0's
         while (n%10==0) n=n/10;
        
+        //Loop to find reverse of a integer
         while (n!=0){
             int rem=n%10;
             rev=rev*10+rem;
