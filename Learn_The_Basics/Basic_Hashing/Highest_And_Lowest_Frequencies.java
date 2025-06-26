@@ -2,7 +2,6 @@ package Basic_Hashing;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 /*
  Problem Statement: Given an array of size N. Find the highest and lowest frequency element.
