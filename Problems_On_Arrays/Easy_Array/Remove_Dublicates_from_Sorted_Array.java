@@ -58,11 +58,6 @@ public class Remove_Dublicates_from_Sorted_Array {
     public static void main(String[] args) {
         int [] arr={1,1,2,2,2,3,3};
         UsingHasshSet(arr);
-        
-
-
-
-
     }
     
 }
