@@ -1,5 +1,7 @@
 package Problems_On_Arrays.Easy_Array;
 
+import java.util.HashMap;
+
 /*
  Problem Statement: Given an array and a sum k, we need to print the length of the longest subarray that sums to k.
 
@@ -18,7 +20,7 @@ public class Longest_SubArrays_With_The_Given_Sum_K {
 
 
    
-    // Using Two Pointers
+    // Using Two Pointers(Optimal)
     static void UsingTwoPointers(int[] arr,int k){
         int n=arr.length;
         int p1=0,p2=0;
@@ -43,13 +45,39 @@ public class Longest_SubArrays_With_The_Given_Sum_K {
 
     }
 
+    //Using HashMap
+    static void UsingHashMap(int[] arr,int k){
+        
+        long sum=0;
+        int maxLength=0;
+        HashMap<Long,Integer> map=new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+           sum += arr[i];
+           
+           if(sum==k){
+            maxLength=Math.max(maxLength, i+1);
+           }
+           long rem=sum-k;
+
+           if(map.containsKey(rem)){
+            maxLength=Math.max(maxLength,i- map.get(rem));
+           }
+
+           if(!map.containsKey(rem)){
+            map.put(sum, i);
+           }
+
+        }
+        System.out.println(maxLength);
+
+    }
 
 
 
 
     public static void main(String[] args) {
         int[] arr = {2,3,5,1,9};
-        UsingTwoPointers(arr,10);
+        UsingHashMap(arr,10);
         
     }
     
