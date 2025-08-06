@@ -52,7 +52,7 @@ public class Rotate_Array_By_K_Element {
 
 
     //Method To Reverse Array
-    static void ReverseArray(int [] arr,int l,int h){
+   public static void ReverseArray(int [] arr,int l,int h){
         while(l<=h){
             int temp=arr[l];
             arr[l]=arr[h];
